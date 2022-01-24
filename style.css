@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #434371;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 720px;
+}
+
+.container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 32px;
+    width: 100%;
+    padding: 24px;
+    margin: 60px 0px 20px;
+    border: 1px solid #bfbfbf;
+    border-radius: 24px;
+}
+
+.container header .score-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+}
+
+.container header .score-box .text {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.container header .score-box .score {
+    margin: 10px 0px 10px;
+    font-size: 48px;
+    line-height: 48px;
+}
+
+.container .game {
+    width: 100%;
+    margin: 80px 0px;
+}
+
+.container .game .button-screen {
+    display: flex;
+    justify-content: center;
+}
+
+.container .game .button-screen .box {
+    margin: 0px 25px;
+}
+
+.container .game .box button {
+    width: 160px;
+    padding: 15px;
+    border: 15px solid #cf2d38;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #FFFFFF;
+}
+
+.container .game .box button:active > img {
+    width: 95%;
+}
+
+.container .game .box button img {
+    width: 100%;
+}
+
+.container footer {
+    position: relative;
+    bottom: 0;
+}
+
+footer #rules {
+    display: none;
+}
