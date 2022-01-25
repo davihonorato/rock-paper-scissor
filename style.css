@@ -10,7 +10,6 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #434371;
@@ -68,24 +67,25 @@ body {
 }
 
 .container .game .button-screen .box {
-    margin: 0px 25px;
+    margin: 0px 32px;
 }
 
 .container .game .box button {
-    width: 160px;
-    padding: 15px;
+    width: 180px;
+    height: 180px;
+    padding: 24px;
     border: 15px solid #cf2d38;
     border-radius: 50%;
     cursor: pointer;
     background-color: #FFFFFF;
 }
 
-.container .game .box button:active > img {
-    width: 95%;
-}
-
 .container .game .box button img {
     width: 100%;
+}
+
+.container .game .box button:active > img {
+    width: 95%;
 }
 
 .container footer {
