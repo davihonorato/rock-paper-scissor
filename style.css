@@ -74,10 +74,21 @@ body {
     width: 180px;
     height: 180px;
     padding: 24px;
-    border: 15px solid #cf2d38;
     border-radius: 50%;
     cursor: pointer;
     background-color: #FFFFFF;
+}
+
+.container .game .button-screen .box #rock {
+    border: 15px solid #3993dd;
+}
+
+.container .game .button-screen .box #paper {
+    border: 15px solid #cf2d38;
+}
+
+.container .game .button-screen .box #scissor {
+    border: 15px solid #ead94c;
 }
 
 .container .game .box button img {
