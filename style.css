@@ -20,13 +20,14 @@ body {
     flex-direction: column;
     align-items: center;
     width: 720px;
+    height: 100%;
 }
 
 .container header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 600;
     line-height: 32px;
     width: 100%;
@@ -34,6 +35,10 @@ body {
     margin: 60px 0px 20px;
     border: 1px solid #bfbfbf;
     border-radius: 24px;
+}
+
+.container header .title {
+    color: #FFFFFF;
 }
 
 .container header .score-box {
@@ -58,50 +63,65 @@ body {
 
 .container .game {
     width: 100%;
-    margin: 80px 0px;
+    margin-top: 50px;
 }
 
 .container .game .button-screen {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-}
-
-.container .game .button-screen .box {
-    margin: 0px 32px;
-}
-
-.container .game .box button {
-    width: 180px;
-    height: 180px;
-    padding: 24px;
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: #FFFFFF;
-}
-
-.container .game .button-screen .box #rock {
-    border: 15px solid #3993dd;
-}
-
-.container .game .button-screen .box #paper {
-    border: 15px solid #cf2d38;
-}
-
-.container .game .button-screen .box #scissor {
-    border: 15px solid #ead94c;
-}
-
-.container .game .box button img {
+    align-items: center;
     width: 100%;
 }
 
-.container .game .box button:active > img {
+.container .game .button-screen .box {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.container .game .button-screen button {
+    width: 256px;
+    height: 256px;
+    padding: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+}
+
+.container .game .button-screen #rock {
+    border: 15px solid #3993dd;
+}
+
+.container .game .button-screen #paper {
+    border: 15px solid #cf2d38;
+}
+
+.container .game .button-screen #scissor {
+    border: 15px solid #ead94c;
+}
+
+.container .game button img {
+    width: 100%;
+}
+
+.container .game button:active > img {
     width: 95%;
 }
 
-.container footer {
-    position: relative;
-    bottom: 0;
+footer {
+    position: absolute;
+    bottom: 10px;
+}
+
+footer span {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 400;
+}
+
+footer span a {
+    color: #cf2d38;
 }
 
 footer #rules {
