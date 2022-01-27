@@ -16,14 +16,14 @@
                 <span class="score">02</span>
             </div>
         </header>
-        <div class="game active">
+        <div class="game">
             <div class="button-screen">
-                <div class="input-field">
-                    <button id="rock"><img src="images/rock-left.png" alt="rock"></button>
-                    <button id="paper"><img src="images/paper-left.png" alt="paper"></button>
+                <div class="input-field space">
+                    <button id="rock" onclick="getInput(this.id)"><img src="images/rock-left.png" alt="rock"></button>
+                    <button id="paper" onclick="getInput(this.id)"><img src="images/paper-left.png" alt="paper"></button>
                 </div>
-                <div class="button-field">
-                    <button id="scissor"><img src="images/scissor-left.png" alt="scissor"></button>
+                <div class="input-field">
+                    <button id="scissor" onclick="getInput(this.id)"><img src="images/scissor-left.png" alt="scissor"></button>
                 </div>
             </div>
             <div class="result-screen">
@@ -48,5 +48,7 @@
         <span>CÓDIGO DESENVOLVIDO POR <a href="#">DAVI HONORATO</a></span>
         <button id="rules">REGRAS</button>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
