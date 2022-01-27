@@ -136,6 +136,9 @@ body {
     justify-content: center;
     text-align: center;
     margin: 0px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    width: 30%;
 }
 
 .container .game .result-screen .box .output {
@@ -149,6 +152,13 @@ body {
 
 .container .game .result-screen .box .output img {
     width: 100%;
+}
+
+.container .game .result-screen .box button {
+    padding: 5px 8px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
 }
 
 footer {
