@@ -1,28 +1,30 @@
-const gameBox = document.querySelector(".game");
+const gameBox = document.querySelector(".game"),
+buttons = gameBox.querySelectorAll('button');
 
-function getInput(buttonId) {
-    //opções disponíveis
-    let choices = ['rock', 'paper', 'scissor'];
+const choices = ['rock', 'paper', 'scissor'];
+let userChoice;
+let computerChoice;
 
-    //pegando a escolha do usuário
-    let userChoice = buttonId;
+// //pegando a escolha do usuário
+buttons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        userChoice = e.currentTarget.id;
 
-    //pegando a escolha do computador
-    let computerChoice = choices[getComputerChoiceId(choices.length)];
+        // gerando a escolha do computador
+        getComputerChoice();
+    })
+});
 
-    //processa e exibe o resultado na tela
-    showResult(userChoice, computerChoice);
+//retorna um número gerado aleatóriamente que será utilizando como uma key para encontrar o valor no array 'choice'
+function getComputerChoice() {
+    // pegando a escolha do computador (0, 1 ou 2) e armazenando em 'indice'
+    let indice = Math.floor(Math.random() * choices.length);
+    computerChoice = choices[indice];
+
+    // processa e exibe o resultado na tela
+    showResult();
 }
 
-//retorna um número gerado aleatóriamente que é utilizando como uma key para encontrar um valor em um array
-function getComputerChoiceId(qntOptions) {
-    return Math.floor(Math.random() * qntOptions);
-}
-
-function showResult(user, computer){
-    if(user == computer) {
-        console.log("EMPATE!");
-    }else {
-        console.log('Alguém Ganhou.');
-    }
+function showResult(){
+    console.log(userChoice, computerChoice);
 }
