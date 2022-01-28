@@ -1,7 +1,14 @@
-const gameBox = document.querySelector(".game"),
-buttons = gameBox.querySelectorAll('button');
+const scoreBoard = document.querySelector('.container .score'),
+gameBox = document.querySelector(".game"),
+buttons = gameBox.querySelectorAll('.button-screen button'),
+resultText = gameBox.querySelector('.result-screen span'),
+againButton = gameBox.querySelector('.result-screen button');
 
-const choices = ['rock', 'paper', 'scissor'];
+const choices = [
+    {"name": 'rock', 'beats': 'scissor'},
+    {"name": 'paper', 'beats': 'rock'},
+    {"name": 'scissor', 'beats': 'paper'}
+];
 let userChoice;
 let computerChoice;
 
@@ -25,6 +32,27 @@ function getComputerChoice() {
     showResult();
 }
 
+// processando a lógica do jogo e exibindo na tela
 function showResult(){
-    console.log(userChoice, computerChoice);
+    gameBox.classList.add('active');
+
+    // caso o resultado saia empatado
+    if(userChoice == computerChoice.name){
+        // insere o valor do usuário
+        // insere o valor do computador
+
+        //modifica o texto
+        resultText.textContent = 'DEU EMPATE!';
+
+    // caso não haja empate
+    }else {
+        // usuário perde
+        if(userChoice == computerChoice.beats){
+            resultText.textContent = 'VOCÊ PERDEU!';
+
+        //usuário ganha
+        }else {
+            resultText.textContent = 'VOCÊ GANHOU!';
+        }
+    }
 }
