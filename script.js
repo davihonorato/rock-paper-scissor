@@ -60,13 +60,29 @@ function showResult(){
     }else {
         // usuário perde
         if(userChoice == computerChoice.beats){
-            resultText.textContent = 'VOCÊ PERDEU!';
             resultCircle.forEach(circle => circle.style.border = '20px solid #cf2d38');
+            resultText.textContent = 'VOCÊ PERDEU!';
+            
+            let score = Number(scoreBoard.textContent);
+            score -= 1;
+            if(score >= 0 && score < 10){
+                scoreBoard.textContent = '0' + score;
+            }else {
+                scoreBoard.textContent = score;
+            }
 
         //usuário ganha
         }else {
-            resultText.textContent = 'VOCÊ GANHOU!';
             resultCircle.forEach(circle => circle.style.border = '20px solid #25db34');
+            resultText.textContent = 'VOCÊ GANHOU!';
+
+            let score = Number(scoreBoard.textContent);
+            score += 1;
+            if(score >= 0 && score < 10){
+                scoreBoard.textContent = '0' + score;
+            }else {
+                scoreBoard.textContent = score;
+            }
         }
     }
 }
