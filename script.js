@@ -1,8 +1,10 @@
 const scoreBoard = document.querySelector('.container .score'),
 gameBox = document.querySelector(".game"),
 buttons = gameBox.querySelectorAll('.button-screen button'),
-resultText = gameBox.querySelector('.result-screen span'),
-againButton = gameBox.querySelector('.result-screen button');
+resultScreen = gameBox.querySelector('.result-screen'),
+resultText = resultScreen.querySelector('.result span'),
+againButton = resultScreen.querySelector('.result button'),
+resultCircle = resultScreen.querySelectorAll('.choices .output');
 
 const choices = [
     {"name": 'rock', 'beats': 'scissor'},
@@ -36,23 +38,32 @@ function getComputerChoice() {
 function showResult(){
     gameBox.classList.add('active');
 
+    //alterando as imagens no resultado
+    document.querySelectorAll('.output img').forEach( (img, index) => {
+        if(index == 0) {
+            img.src = `images/${userChoice}-left.png`;
+        }else {
+            img.src = `images/${computerChoice.name}-right.png`;
+        }
+    })
+
     // caso o resultado saia empatado
     if(userChoice == computerChoice.name){
-        // insere o valor do usuário
-        // insere o valor do computador
-
         //modifica o texto
         resultText.textContent = 'DEU EMPATE!';
+        resultCircle.forEach(circle => circle.style.border = '20px solid #2541db');
 
     // caso não haja empate
     }else {
         // usuário perde
         if(userChoice == computerChoice.beats){
             resultText.textContent = 'VOCÊ PERDEU!';
+            resultCircle.forEach(circle => circle.style.border = '20px solid #cf2d38');
 
         //usuário ganha
         }else {
             resultText.textContent = 'VOCÊ GANHOU!';
+            resultCircle.forEach(circle => circle.style.border = '20px solid #25db34');
         }
     }
 }
