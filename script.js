@@ -5,7 +5,9 @@ resultScreen = gameBox.querySelector('.result-screen'),
 resultText = resultScreen.querySelector('.result span'),
 againButton = resultScreen.querySelector('.result button'),
 resultCircle = resultScreen.querySelectorAll('.choices .output'),
-rulesButton = document.querySelector('#rules');
+rules = document.querySelector('.rules'),
+rulesButton = document.querySelector('#rulesButton'),
+rulesCloseButton = rules.querySelector('i');
 
 const choices = [
     {"name": 'rock', 'beats': 'scissor'},
@@ -32,12 +34,26 @@ function getComputerChoice() {
     computerChoice = choices[indice];
 
     // processa e exibe o resultado na tela
+    timing();
+}
+
+function timing() {
+    gameBox.classList.add('pending');
+
+    const couting = gameBox.querySelector('.count')
+    for (let i = 3; i > 0; i--) {
+        setTimeout(() => {
+            couting.textContent = i;
+            console.log(i)
+        }, (1000));
+    }
+
     showResult();
 }
 
 // processando a lógica do jogo e exibindo na tela
 function showResult(){
-    gameBox.classList.add('active');
+    gameBox.classList.replace('pending', 'active');
 
     //alterando as imagens no resultado
     document.querySelectorAll('.output img').forEach( (img, index) => {
@@ -74,6 +90,9 @@ againButton.onclick = function() {
 }
 
 rulesButton.onclick = function() {
-    const rules = document.querySelector('.rules');
-    rules.classList.toggle('active');
+    rules.classList.add('active');
+}
+
+rulesCloseButton.onclick = function() {
+    rules.classList.remove('active');
 }

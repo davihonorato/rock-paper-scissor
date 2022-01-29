@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedra Papel Tesoura</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <section class="container">
@@ -26,6 +27,7 @@
                     <button id="scissor"><img src="images/scissor-left.png" alt="scissor"></button>
                 </div>
             </div>
+            <span class="count">3</span>
             <div class="result-screen">
                 <div class="box result">
                     <span>VOCÊ VENCEU!</span>
@@ -42,10 +44,17 @@
             </div>
         </div>
     </section>
+    <button id="rulesButton">REGRAS</button>
     <div class="rules">
-        <span>NADA AQUI</span>
+        <i class="fas fa-times"></i>
+        <h2>REGRAS</h2>
+        <p>Se o jogador vencer, ele ganha um ponto. Se o computador vencer, o jogador perde um ponto.</p>
+        <ul>
+            <li>Pedra ganha de Tesoura</li>
+            <li>Tesoura ganha de Papel</li>
+            <li>Papel ganha de Pedra</li>
+        </ul>
     </div>
-    <button id="rules">REGRAS</button>
     <footer>
         <span>CÓDIGO DESENVOLVIDO POR <a href="#">DAVI HONORATO</a></span>
     </footer>
