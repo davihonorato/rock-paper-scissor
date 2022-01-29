@@ -67,3 +67,7 @@ function showResult(){
         }
     }
 }
+
+againButton.onclick = function(){
+    gameBox.classList.remove('active');
+}
