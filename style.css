@@ -120,18 +120,6 @@ body {
     width: 95%;
 }
 
-.container .game .count {
-    font-size: 72px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.container .game.pending .count {
-    display: flex;
-}
-
 .container .game .result-screen {
     display: none;
     justify-content: center;

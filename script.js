@@ -34,26 +34,12 @@ function getComputerChoice() {
     computerChoice = choices[indice];
 
     // processa e exibe o resultado na tela
-    timing();
-}
-
-function timing() {
-    gameBox.classList.add('pending');
-
-    const couting = gameBox.querySelector('.count')
-    for (let i = 3; i > 0; i--) {
-        setTimeout(() => {
-            couting.textContent = i;
-            console.log(i)
-        }, (1000));
-    }
-
     showResult();
 }
 
 // processando a lógica do jogo e exibindo na tela
 function showResult(){
-    gameBox.classList.replace('pending', 'active');
+    gameBox.classList.add('active');
 
     //alterando as imagens no resultado
     document.querySelectorAll('.output img').forEach( (img, index) => {
