@@ -4,7 +4,8 @@ buttons = gameBox.querySelectorAll('.button-screen button'),
 resultScreen = gameBox.querySelector('.result-screen'),
 resultText = resultScreen.querySelector('.result span'),
 againButton = resultScreen.querySelector('.result button'),
-resultCircle = resultScreen.querySelectorAll('.choices .output');
+resultCircle = resultScreen.querySelectorAll('.choices .output'),
+rulesButton = document.querySelector('#rules');
 
 const choices = [
     {"name": 'rock', 'beats': 'scissor'},
@@ -68,6 +69,11 @@ function showResult(){
     }
 }
 
-againButton.onclick = function(){
+againButton.onclick = function() {
     gameBox.classList.remove('active');
+}
+
+rulesButton.onclick = function() {
+    const rules = document.querySelector('.rules');
+    rules.classList.toggle('active');
 }
